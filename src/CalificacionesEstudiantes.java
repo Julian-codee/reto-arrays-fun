@@ -30,30 +30,26 @@ public class CalificacionesEstudiantes {
 
     public static void mostrarInformacionEstudiantes(String[] estudiantes, String[] materias, double[][] notas) {
         System.out.println("Información de los estudiantes:");
-        for (String estudiante : estudiantes) {
-            System.out.print(estudiante + " , ");
+        for (int i = 0 ; i < estudiantes.length; i++) {
+            System.out.print(estudiantes[i] + " : \n ");
 
-        }
-        System.out.println();
+            for (int j = 0 ; j < materias.length; j++) {
+                System.out.print(materias[j] + " = " + notas[i][j] + "\n");
 
-        for (int i = 0; i < notas.length; i++){
-            for (int j = 0; j < notas[i].length; j++){
-                System.out.print(notas[i][j] +   " ");
-            }
-
-            for (String materia : materias) {
-                System.out.print(materia + ", ");
 
             }
             System.out.println();
         }
+        System.out.println();
+
+
 
     }
 
+    //Mostrar el Promedio de los estudiantes
+
     public static void calcularPromedios(String[] estudiantes, double[][] notas) {
         System.out.println("\nPromedios de los estudiantes:");
-
-
 
         for (int i = 0; i < notas.length; i++){
             double total = 0;
@@ -67,7 +63,7 @@ public class CalificacionesEstudiantes {
         System.out.println();
     }
 
-
+//Mostrar el mejor estudiante
 
     public static void encontrarMejorEstudiante(String[] estudiantes, double[][] notas) {
 
@@ -92,6 +88,7 @@ public class CalificacionesEstudiantes {
         System.out.println();
     }
 
+    //Mostrar la mejor materia
 
     public static void encontrarMejorMateria(String[] materias, double[][] notas) {
         double mejorMateria2[] = new double[materias.length];
