@@ -34,7 +34,6 @@ public class CalificacionesEstudiantes {
             System.out.print(estudiante + " , ");
 
         }
-
         System.out.println();
 
         for (int i = 0; i < notas.length; i++){
@@ -65,16 +64,59 @@ public class CalificacionesEstudiantes {
             System.out.print(estudiantes[i] +  " = " + totalFinal );
             System.out.println();
         }
-
+        System.out.println();
     }
+
+
 
     public static void encontrarMejorEstudiante(String[] estudiantes, double[][] notas) {
 
+        System.out.print("El mejor promedio es: ");
+        double mejorEstudiante2[] = new double[estudiantes.length];
+        for (int i = 0; i < notas.length; i++){
+            double total = 0;
+            for (int j = 0; j < notas.length; j++){
+                total += notas[i][j];
+            }
+            double totalFinal = total / notas.length;
+            mejorEstudiante2[i] = totalFinal;
+
+        }
+        double max = mejorEstudiante2[0];
+        for(int i = 1; i < mejorEstudiante2.length; i++) {
+            if (mejorEstudiante2[i] > max) {
+                max = mejorEstudiante2[i];
+                System.out.print(estudiantes[i] + " con un promedio de " + max);
+            }
+        }
+        System.out.println();
     }
 
+
     public static void encontrarMejorMateria(String[] materias, double[][] notas) {
-        // Implementa este método
+        double mejorMateria2[] = new double[materias.length];
+        for (int i = 0; i < notas.length; i++){
+            double total = 0;
+            for (int j = 0; j < notas.length; j++){
+                total += notas[j][i];
+            }
+             mejorMateria2[i] = total / notas.length;
+
+
+        }
+        double max = mejorMateria2[0];
+        int indice = 0;
+        for(int i = 1; i < mejorMateria2.length; i++) {
+            if (mejorMateria2[i] > max) {
+                max = mejorMateria2[i];
+                indice = i;
+
+            }
+        }
+        System.out.println("La materia es: " + materias[indice] + " con un promedio de " + max);
     }
 }
+
+
 
 
