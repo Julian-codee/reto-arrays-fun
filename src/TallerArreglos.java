@@ -75,6 +75,6 @@ public class TallerArreglos {
 
     // Método para ordenar el arreglo (puedes usar el algoritmo de burbuja)
     public static void ordenarArreglo(int[] numeros) {
-        Arrays.sort(numeros);;
+        Arrays.sort(numeros);
     }
 }
